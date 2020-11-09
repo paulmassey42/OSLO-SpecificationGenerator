@@ -168,7 +168,7 @@
             </div>
 
             <div class="region region--no-space-top typography" id="summary">
-                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Samenvatting</h2>
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Summary</h2>
                 {% block summary %} 
                   {% if metadata.description %} 
                     {{ metadata.description[language] }}
@@ -178,7 +178,7 @@
 
             <div class="region region--no-space-top typography" id="status">
               <section class="introductory" id="sotd" typeof="bibo:Chapter" resource="#ref" rel="bibo:Chapter">
-                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Status van dit document</h2>
+                <h2 class="h2" aria-level="1" role="heading" id="h2_sotd">Document status</h2>
                 {% block status %}
                 <p>
                   Dit applicatieprofiel heeft status <a href="{{metadata.status }}">{{ metadata.statuslabel }}</a> en werd uitgegeven op {{ metadata.issued }}.
@@ -191,13 +191,13 @@
             </div>
 
             <div class="region region--no-space-top typography" id="license">
-              <h2 class="h2">Licentie</h2>
+              <h2 class="h2">License</h2>
               {% block license %}
               <p><span rel="dct:type" property="dct:title" href="http://purl.org/dc/dcmitype/Text" xmlns:dct="http://purl.org/dc/terms/">Deze specificatie</span> van <a rel="cc:attributionURL" property="cc:attributionName" href="http://vlaanderen.be/informatievlaanderen" xmlns:cc="http://creativecommons.org/ns#">Informatie Vlaanderen</a> is gepubliceerd onder de <a href="{{ metadata.license }}" rel="license">"Modellicentie Gratis Hergebruik - v1.0"</a>.</p>
               {% endblock %}
             </div>
             <div class="region region--no-space-top typography" id="conformance">
-              <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformiteit</h2>
+              <h2 class="h2" id="conformance" aria-level="1" role="heading">Conformance</h2>
               {% block conformance %}
               <p>De conformiteit voor applicatieprofielen is <a href="/doc/begeleidend/applicatieprofielen/conformiteit">hier</a> te vinden.</p>
               {% endblock %}
@@ -327,10 +327,10 @@
                   <dl>
                     <dt>Beschrijving</dt><dd>{{ entity.description[language] }}</dd>
                     {% if entity.usage[language] %}
-                    <dt>Gebruik</dt><dd>{{ entity.usage[language] }}</dd>
+                    <dt>Usage</dt><dd>{{ entity.usage[language] }}</dd>
                     {% endif %}
 		    {% if ((entity.parents | length) > 0 ) %} 
-		    <dt>Subklasse van <dt><dd>
+		    <dt>Subclass of <dt><dd>
                         {%- for parent in entity['parents'] %}
                         <a href="{{ parent.scoped_uri}}">{{ parent.label }}</a>{% if not loop.last %}, {% endif %}
                     	{%- endfor %}
@@ -353,11 +353,11 @@
                     <thead>
                       <tr class="data-table__header">
                         <th class="data-table__header-title--sortable data-table__header-title--sortable-active">Eigenschap</th>
-                        <th class="data-table__header-title--sortable">Verwacht Type</th>
-                        <th class="data-table__header-title--sortable">Kardinaliteit</th>
-                        <th class="data-table__header-title--sortable">Beschrijving</th>
-                        <th class="data-table__header-title--sortable">Gebruik</th>
-                        <th class="data-table__header-title--sortable">Codelijst</th>
+                        <th class="data-table__header-title--sortable">Expected Type</th>
+                        <th class="data-table__header-title--sortable">Cardinality</th>
+                        <th class="data-table__header-title--sortable">Description</th>
+                        <th class="data-table__header-title--sortable">User</th>
+                        <th class="data-table__header-title--sortable">Code list</th>
                       </tr>
                     </thead>
 
@@ -412,22 +412,22 @@
                       <div class="side-navigation__group">
                           <ul>
                               <li class="side-navigation__item">
-                                  <a href="#introduction">Inleiding</a>
+                                  <a href="#introduction">Introduction</a>
                               </li>
                               <li class="side-navigation__item">
-                                  <a href="#summary">Samenvatting</a>
+                                  <a href="#summary">Summary</a>
                               </li>
                               <li class="side-navigation__item">
-                                  <a href="#status">Status van dit document</a>
+                                  <a href="#status">Document Status</a>
                               </li>
                               <li class="side-navigation__item">
-                                  <a href="#license">Licentie</a>
+                                  <a href="#license">License</a>
                               </li>
                               <li class="side-navigation__item">
-                                  <a href="#conformance">Conformiteit</a>
+                                  <a href="#conformance">Conformity</a>
                               </li>
                               <li class="side-navigation__item">
-                                  <a href="#overview">Overzicht</a>
+                                  <a href="#overview">Overview</a>
                               </li>
                               <li class="side-navigation__item">
                                   <a href="#jsonld">JSON-LD Context</a>
